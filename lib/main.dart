@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:screetester/prayercard.dart';
-import 'package:screetester/profile_page.dart';
-import 'package:screetester/qazagridview.dart';
+import 'package:screetester/PrayerTime.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +16,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 800),
+    return const ScreenUtilInit(
+      designSize: Size(360, 800),
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           home: SafeArea(
@@ -36,7 +34,7 @@ class _MyAppState extends State<MyApp> {
               //   ),
               //   backgroundColor: const Color(0xffffffff),
               // ),
-              body: ProfilePage(),
+              body: PrayerTimeScreen(),
             ),
           )),
     );
