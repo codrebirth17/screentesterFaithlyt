@@ -14,6 +14,7 @@ class _PrayerTimeScreenState extends State<PrayerTimeScreen> {
     return Column(
       children: [
         Container(
+          
           decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -27,7 +28,7 @@ class _PrayerTimeScreenState extends State<PrayerTimeScreen> {
                   begin: Alignment.center,
                   end: Alignment.bottomCenter,
                   colors: [Color(0xff00DC37), Color(0xff4CFF33)])),
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           height: 51.h,
           width: 360.w,
           child: Text(
@@ -53,8 +54,8 @@ class Todayshare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(16, 20, 16, 8),
-      padding: const EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       width: 328.w,
       height: 44.h,
       child: Row(children: [
@@ -63,21 +64,21 @@ class Todayshare extends StatelessWidget {
           style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w600),
         ),
         SizedBox(
-          width: 189.w,
+          width: 183.w,
         ),
-        const IconButton(
+        IconButton(
             onPressed: null,
             icon: Icon(
               Icons.calendar_month,
               color: Color(0xff004F1D),
-              size: 24,
+              size: ScreenUtil().setSp(24),
             )),
-        const IconButton(
+        IconButton(
             onPressed: null,
             icon: Icon(
               Icons.share,
               color: Color(0xff004F1D),
-              size: 24,
+              size: ScreenUtil().setSp(24),
             ))
       ]),
     );
@@ -104,40 +105,43 @@ class _SinglePrayerTileState extends State<SinglePrayerTile> {
               blurStyle: BlurStyle.outer,
               spreadRadius: 0)
         ],
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       height: 44.h,
       width: 328.w,
-      padding: const EdgeInsets.all(10),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        Image.asset(
-          "Assets/prayericon.png",
-          height: 24.h,
-          width: 24.w,
-        ),
-        SizedBox(
-          width: 10.w,
-        ),
-        const Text("Fajr",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
-        SizedBox(
-          width: 144.w,
-        ),
-        const Text(
-          "05:51 AM",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
-        ),
-        SizedBox(
-          width: 10.w,
-        ),
-        const IconButton(
-            iconSize: 24,
-            onPressed: null,
-            icon: Icon(
-              Icons.notifications_none_outlined,
-              color: Color(0xff004F1D),
-            ))
-      ]),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+       
+          children: [
+            Image.asset(
+              "Assets/prayericon.png",
+              height: 24.h,
+              width: 24.w,
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Text("Fajr",
+                style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400)),
+            SizedBox(
+              width: 138.w,
+            ),
+            Text(
+              "05:51 AM",
+              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            IconButton(
+                onPressed: null,
+                icon: Icon(
+                  size: ScreenUtil().setSp(24),
+                  Icons.notifications_none_outlined,
+                  color: Color(0xff004F1D),
+                ))
+          ]),
     );
   }
 }
@@ -153,7 +157,7 @@ class _SunriseTimeState extends State<SunriseTime> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8),
+      margin: EdgeInsets.symmetric(horizontal: 8.w,vertical: 8.h),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -163,11 +167,11 @@ class _SunriseTimeState extends State<SunriseTime> {
               blurStyle: BlurStyle.outer,
               spreadRadius: 0)
         ],
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       height: 44.h,
       width: 328.w,
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Image.asset(
           "Assets/sunrise.png",
@@ -177,22 +181,22 @@ class _SunriseTimeState extends State<SunriseTime> {
         SizedBox(
           width: 10.w,
         ),
-        const Text("Sunrise",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+         Text("Sunrise",
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400)),
         SizedBox(
-          width: 118.w,
+          width: 114.w,
         ),
-        const Text(
+         Text(
           "05:51 AM",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
         ),
         SizedBox(
           width: 10.w,
         ),
-        const IconButton(
-            iconSize: 24,
+         IconButton(
+            iconSize:  ScreenUtil().setSp(24),
             onPressed: null,
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_outlined,
               color: Color(0xff004F1D),
             ))
@@ -212,7 +216,7 @@ class _ZoharTimeState extends State<ZoharTime> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin:  EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -226,7 +230,7 @@ class _ZoharTimeState extends State<ZoharTime> {
       ),
       height: 44.h,
       width: 328.w,
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Image.asset(
           "Assets/prayericon.png",
@@ -236,22 +240,22 @@ class _ZoharTimeState extends State<ZoharTime> {
         SizedBox(
           width: 10.w,
         ),
-        const Text("Zohar",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+        Text("Zohar",
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400)),
         SizedBox(
-          width: 130.w,
+          width: 124.w,
         ),
-        const Text(
+         Text(
           "05:51 AM",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
         ),
         SizedBox(
           width: 10.w,
         ),
-        const IconButton(
-            iconSize: 24,
+         IconButton(
+            iconSize: ScreenUtil().setSp(24),
             onPressed: null,
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_outlined,
               color: Color(0xff004F1D),
             ))
@@ -271,7 +275,7 @@ class _AsarTimeState extends State<AsarTime> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin:  EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -281,11 +285,11 @@ class _AsarTimeState extends State<AsarTime> {
               blurStyle: BlurStyle.outer,
               spreadRadius: 0)
         ],
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       height: 44.h,
       width: 328.w,
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Image.asset(
           "Assets/prayericon.png",
@@ -295,22 +299,22 @@ class _AsarTimeState extends State<AsarTime> {
         SizedBox(
           width: 10.w,
         ),
-        const Text("Asar",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+         Text("Asar",
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400)),
         SizedBox(
-          width: 138.3.w,
+          width: 131.w,
         ),
-        const Text(
+         Text(
           "05:51 AM",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
         ),
         SizedBox(
           width: 10.w,
         ),
-        const IconButton(
-            iconSize: 24,
+         IconButton(
+            iconSize: ScreenUtil().setSp(24),
             onPressed: null,
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_outlined,
               color: Color(0xff004F1D),
             ))
@@ -330,7 +334,7 @@ class _MagribTimeState extends State<MagribTime> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin:  EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -340,11 +344,11 @@ class _MagribTimeState extends State<MagribTime> {
               blurStyle: BlurStyle.outer,
               spreadRadius: 0)
         ],
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       height: 44.h,
       width: 328.w,
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Image.asset(
           "Assets/prayericon.png",
@@ -354,22 +358,22 @@ class _MagribTimeState extends State<MagribTime> {
         SizedBox(
           width: 10.w,
         ),
-        const Text("Magrib",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+         Text("Magrib",
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400)),
         SizedBox(
-          width: 122.w,
+          width: 116.4.w,
         ),
-        const Text(
+         Text(
           "05:51 AM",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
         ),
         SizedBox(
           width: 10.w,
         ),
-        const IconButton(
-            iconSize: 24,
+         IconButton(
+            iconSize: ScreenUtil().setSp(24),
             onPressed: null,
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_outlined,
               color: Color(0xff004F1D),
             ))
@@ -389,7 +393,7 @@ class _IshaTimeState extends State<IshaTime> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin: EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
         // border: Border.all(color: Color(0xff004F1D), width: 1.w),
         boxShadow: [
@@ -404,7 +408,7 @@ class _IshaTimeState extends State<IshaTime> {
       ),
       height: 44.h,
       width: 328.w,
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Image.asset(
           "Assets/prayericon.png",
@@ -414,22 +418,22 @@ class _IshaTimeState extends State<IshaTime> {
         SizedBox(
           width: 10.w,
         ),
-        const Text("Isha",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+         Text("Isha",
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400)),
         SizedBox(
-          width: 140.8.w,
+          width: 133.8.w,
         ),
-        const Text(
+         Text(
           "05:51 AM",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
         ),
         SizedBox(
           width: 10.w,
         ),
-        const IconButton(
-            iconSize: 24,
+         IconButton(
+            iconSize: ScreenUtil().setSp(24),
             onPressed: null,
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_outlined,
               color: Color(0xff004F1D),
             ))
